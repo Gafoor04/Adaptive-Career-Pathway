@@ -1,0 +1,530 @@
+{
+  "version": "1.0.0",
+  "description": "Initial curated technical competency graph across software, data, cloud, and machine learning pathways.",
+  "last_updated": "2026-10-12",
+  "concepts": [
+    {
+      "id": "c-prog-fundamentals",
+      "slug": "prog-fundamentals",
+      "name": "Programming Foundations",
+      "description": "Variables, conditional control flow, iterative loops, functions, and scoping.",
+      "category": "Programming & Core CS",
+      "default_bkt_params": { "p_l0": 0.20, "p_transition": 0.15, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["programming", "core-cs", "beginner"]
+    },
+    {
+      "id": "c-oop",
+      "slug": "oop-principles",
+      "name": "Object-Oriented Design & Principles",
+      "description": "Encapsulation, inheritance, polymorphism, interfaces, and SOLID principles.",
+      "category": "Programming & Core CS",
+      "default_bkt_params": { "p_l0": 0.15, "p_transition": 0.15, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["programming", "oop", "architecture"]
+    },
+    {
+      "id": "c-async-concurrency",
+      "slug": "async-concurrency",
+      "name": "Concurrency & Asynchronous Programming",
+      "description": "Threads, processes, event loops, async/await, race conditions, and deadlocks.",
+      "category": "Programming & Core CS",
+      "default_bkt_params": { "p_l0": 0.10, "p_transition": 0.12, "p_guess": 0.15, "p_slip": 0.10 },
+      "tags": ["concurrency", "advanced", "systems"]
+    },
+    {
+      "id": "c-linear-data-structures",
+      "slug": "linear-data-structures",
+      "name": "Linear Data Structures",
+      "description": "Contiguous arrays, linked lists, stacks, and queues with memory layouts.",
+      "category": "Programming & Core CS",
+      "default_bkt_params": { "p_l0": 0.20, "p_transition": 0.15, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["dsa", "memory", "foundational"]
+    },
+    {
+      "id": "c-trees-graphs",
+      "slug": "trees-graphs",
+      "name": "Non-Linear Structures & Graph Traversals",
+      "description": "Binary search trees, heaps, adjacency graphs, BFS, and DFS traversals.",
+      "category": "Programming & Core CS",
+      "default_bkt_params": { "p_l0": 0.10, "p_transition": 0.12, "p_guess": 0.18, "p_slip": 0.10 },
+      "tags": ["dsa", "graphs", "trees"]
+    },
+    {
+      "id": "c-algo-complexity",
+      "slug": "algo-complexity",
+      "name": "Algorithmic Complexity & Big-O",
+      "description": "Asymptotic time/space complexity analysis, divide-and-conquer, and sorting.",
+      "category": "Programming & Core CS",
+      "default_bkt_params": { "p_l0": 0.15, "p_transition": 0.15, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["algorithms", "math", "analysis"]
+    },
+    {
+      "id": "c-dynamic-programming",
+      "slug": "dynamic-programming",
+      "name": "Dynamic Programming & Greedy Algorithms",
+      "description": "Optimal substructure, overlapping subproblems, memoization, and tabulation.",
+      "category": "Programming & Core CS",
+      "default_bkt_params": { "p_l0": 0.08, "p_transition": 0.10, "p_guess": 0.15, "p_slip": 0.12 },
+      "tags": ["algorithms", "advanced", "problem-solving"]
+    },
+    {
+      "id": "c-sql-basics",
+      "slug": "sql-basics",
+      "name": "SQL Foundations & Relational Queries",
+      "description": "DDL/DML, multi-table JOINs, GROUP BY, aggregations, and subqueries.",
+      "category": "Databases & Storage",
+      "default_bkt_params": { "p_l0": 0.20, "p_transition": 0.15, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["database", "sql", "foundational"]
+    },
+    {
+      "id": "c-db-normalization",
+      "slug": "db-normalization",
+      "name": "Relational Schema Design & Normalization",
+      "description": "1NF to 3NF/BCNF normalization, primary/foreign keys, and data integrity.",
+      "category": "Databases & Storage",
+      "default_bkt_params": { "p_l0": 0.12, "p_transition": 0.14, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["database", "schema-design", "architecture"]
+    },
+    {
+      "id": "c-db-indexing",
+      "slug": "db-indexing",
+      "name": "Database Indexing & Query Plans",
+      "description": "B-tree and hash indexes, composite keys, EXPLAIN plans, and query optimization.",
+      "category": "Databases & Storage",
+      "default_bkt_params": { "p_l0": 0.10, "p_transition": 0.12, "p_guess": 0.18, "p_slip": 0.10 },
+      "tags": ["database", "performance", "optimization"]
+    },
+    {
+      "id": "c-acid-transactions",
+      "slug": "acid-transactions",
+      "name": "ACID Transactions & Concurrency Control",
+      "description": "Atomicity, consistency, isolation levels, durability, locking, and MVCC.",
+      "category": "Databases & Storage",
+      "default_bkt_params": { "p_l0": 0.10, "p_transition": 0.12, "p_guess": 0.18, "p_slip": 0.10 },
+      "tags": ["database", "concurrency", "transactions"]
+    },
+    {
+      "id": "c-redis-caching",
+      "slug": "redis-caching",
+      "name": "Key-Value Caching & In-Memory Stores",
+      "description": "In-memory stores, Redis data structures, TTL, cache invalidation strategies.",
+      "category": "Databases & Storage",
+      "default_bkt_params": { "p_l0": 0.12, "p_transition": 0.15, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["database", "caching", "performance"]
+    },
+    {
+      "id": "c-document-stores",
+      "slug": "document-stores",
+      "name": "Document Stores & Distributed NoSQL",
+      "description": "Schema-less document models (MongoDB), horizontal sharding, CAP theorem.",
+      "category": "Databases & Storage",
+      "default_bkt_params": { "p_l0": 0.12, "p_transition": 0.14, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["database", "nosql", "distributed"]
+    },
+    {
+      "id": "c-http-protocol",
+      "slug": "http-protocol",
+      "name": "HTTP Protocol & Web Networking",
+      "description": "HTTP request/response cycle, status codes, headers, cookies, TLS/HTTPS, and DNS.",
+      "category": "Web & API Architecture",
+      "default_bkt_params": { "p_l0": 0.18, "p_transition": 0.15, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["web", "networking", "protocols"]
+    },
+    {
+      "id": "c-rest-api-design",
+      "slug": "rest-api-design",
+      "name": "RESTful API Design & Serialization",
+      "description": "Resource-oriented routing, idempotent methods, JSON serialization, and OpenAPI.",
+      "category": "Web & API Architecture",
+      "default_bkt_params": { "p_l0": 0.15, "p_transition": 0.15, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["api", "web", "architecture"]
+    },
+    {
+      "id": "c-auth-security",
+      "slug": "auth-security",
+      "name": "Authentication, Authorization & Web Security",
+      "description": "Password hashing (Argon2/bcrypt), JWT, OAuth2, CORS, CSRF, and OWASP Top 10.",
+      "category": "Web & API Architecture",
+      "default_bkt_params": { "p_l0": 0.10, "p_transition": 0.12, "p_guess": 0.18, "p_slip": 0.10 },
+      "tags": ["security", "auth", "web"]
+    },
+    {
+      "id": "c-html-css-semantics",
+      "slug": "html-css-semantics",
+      "name": "HTML5 Semantics & Responsive Layouts",
+      "description": "Semantic markup, CSS Box Model, Flexbox, Grid, and responsive viewport design.",
+      "category": "Frontend Engineering",
+      "default_bkt_params": { "p_l0": 0.25, "p_transition": 0.15, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["frontend", "css", "html"]
+    },
+    {
+      "id": "c-dom-js-runtime",
+      "slug": "dom-js-runtime",
+      "name": "JavaScript Runtime & DOM Mechanics",
+      "description": "Execution contexts, closures, event bubbling, asynchronous microtasks, and DOM API.",
+      "category": "Frontend Engineering",
+      "default_bkt_params": { "p_l0": 0.18, "p_transition": 0.15, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["javascript", "frontend", "runtime"]
+    },
+    {
+      "id": "c-react-foundations",
+      "slug": "react-foundations",
+      "name": "Component Architecture & React Foundations",
+      "description": "Virtual DOM, JSX, components, unidirectional data flow, props, state, and hooks.",
+      "category": "Frontend Engineering",
+      "default_bkt_params": { "p_l0": 0.15, "p_transition": 0.14, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["react", "frontend", "ui"]
+    },
+    {
+      "id": "c-state-management",
+      "slug": "state-management",
+      "name": "Client-Side State Management & Immutability",
+      "description": "Global vs local state, Context API, Redux patterns, immutable state transitions.",
+      "category": "Frontend Engineering",
+      "default_bkt_params": { "p_l0": 0.12, "p_transition": 0.14, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["frontend", "react", "state"]
+    },
+    {
+      "id": "c-linux-shell",
+      "slug": "linux-shell",
+      "name": "Linux Shell & Operating System Basics",
+      "description": "POSIX shell, file system hierarchy, permissions, stdin/stdout piping, and processes.",
+      "category": "Cloud, Systems & DevOps",
+      "default_bkt_params": { "p_l0": 0.20, "p_transition": 0.15, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["linux", "systems", "cli"]
+    },
+    {
+      "id": "c-git-version-control",
+      "slug": "git-version-control",
+      "name": "Git Version Control & Branching Workflows",
+      "description": "DAG-based commit history, branching, merge vs rebase, conflict resolution, PRs.",
+      "category": "Cloud, Systems & DevOps",
+      "default_bkt_params": { "p_l0": 0.25, "p_transition": 0.15, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["git", "version-control", "devops"]
+    },
+    {
+      "id": "c-docker-containers",
+      "slug": "docker-containers",
+      "name": "Containerization with Docker",
+      "description": "Namespaces, cgroups, Dockerfile instructions, layer caching, and multi-stage builds.",
+      "category": "Cloud, Systems & DevOps",
+      "default_bkt_params": { "p_l0": 0.15, "p_transition": 0.14, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["docker", "containers", "cloud"]
+    },
+    {
+      "id": "c-kubernetes-orchestration",
+      "slug": "kubernetes-orchestration",
+      "name": "Container Orchestration with Kubernetes",
+      "description": "Control plane architecture, Pods, Deployments, Services, ConfigMaps, and Ingress.",
+      "category": "Cloud, Systems & DevOps",
+      "default_bkt_params": { "p_l0": 0.08, "p_transition": 0.10, "p_guess": 0.18, "p_slip": 0.12 },
+      "tags": ["kubernetes", "orchestration", "cloud"]
+    },
+    {
+      "id": "c-cicd-pipelines",
+      "slug": "cicd-pipelines",
+      "name": "Continuous Integration & Deployment Pipelines",
+      "description": "Automated build/test pipelines, linting, artifacts, deployment environments, and rollbacks.",
+      "category": "Cloud, Systems & DevOps",
+      "default_bkt_params": { "p_l0": 0.12, "p_transition": 0.14, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["cicd", "automation", "devops"]
+    },
+    {
+      "id": "c-data-batch-etl",
+      "slug": "data-batch-etl",
+      "name": "Batch ETL Architecture & Data Warehousing",
+      "description": "Extract-Transform-Load pipelines, star/snowflake schemas, columnar storage formats (Parquet).",
+      "category": "Data Engineering & Analytics",
+      "default_bkt_params": { "p_l0": 0.12, "p_transition": 0.14, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["data-engineering", "etl", "warehouse"]
+    },
+    {
+      "id": "c-stream-processing",
+      "slug": "stream-processing",
+      "name": "Message Streaming & Event-Driven Systems",
+      "description": "Pub/Sub message brokers (Kafka/RabbitMQ), consumer groups, at-least-once delivery.",
+      "category": "Data Engineering & Analytics",
+      "default_bkt_params": { "p_l0": 0.10, "p_transition": 0.12, "p_guess": 0.18, "p_slip": 0.10 },
+      "tags": ["streaming", "kafka", "distributed-systems"]
+    },
+    {
+      "id": "c-linear-algebra-ml",
+      "slug": "linear-algebra-ml",
+      "name": "Linear Algebra for Machine Learning",
+      "description": "Vector spaces, matrix multiplication, dot products, rank, determinants, and eigenvalues.",
+      "category": "Machine Learning Foundations",
+      "default_bkt_params": { "p_l0": 0.15, "p_transition": 0.12, "p_guess": 0.18, "p_slip": 0.10 },
+      "tags": ["math", "linear-algebra", "ml"]
+    },
+    {
+      "id": "c-prob-stats-ml",
+      "slug": "prob-stats-ml",
+      "name": "Probability & Statistics for Data Science",
+      "description": "Probability distributions, conditional probability, Bayes' theorem, variance, and hypothesis testing.",
+      "category": "Machine Learning Foundations",
+      "default_bkt_params": { "p_l0": 0.15, "p_transition": 0.12, "p_guess": 0.18, "p_slip": 0.10 },
+      "tags": ["math", "statistics", "probability"]
+    },
+    {
+      "id": "c-supervised-learning",
+      "slug": "supervised-learning",
+      "name": "Supervised Learning Algorithms",
+      "description": "Linear and logistic regression, decision trees, random forests, gradient boosting.",
+      "category": "Machine Learning Foundations",
+      "default_bkt_params": { "p_l0": 0.12, "p_transition": 0.14, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["ml", "algorithms", "supervised"]
+    },
+    {
+      "id": "c-unsupervised-learning",
+      "slug": "unsupervised-learning",
+      "name": "Unsupervised Learning & Dimensionality Reduction",
+      "description": "K-means clustering, hierarchical clustering, and Principal Component Analysis (PCA).",
+      "category": "Machine Learning Foundations",
+      "default_bkt_params": { "p_l0": 0.10, "p_transition": 0.12, "p_guess": 0.18, "p_slip": 0.10 },
+      "tags": ["ml", "unsupervised", "clustering"]
+    },
+    {
+      "id": "c-model-evaluation",
+      "slug": "model-evaluation",
+      "name": "Machine Learning Validation & Metrics",
+      "description": "Cross-validation, precision/recall/F1, ROC-AUC, log loss, calibration, and data leakage prevention.",
+      "category": "Machine Learning Foundations",
+      "default_bkt_params": { "p_l0": 0.12, "p_transition": 0.14, "p_guess": 0.20, "p_slip": 0.10 },
+      "tags": ["ml", "evaluation", "metrics"]
+    }
+  ],
+  "prerequisites": [
+    { "concept_id": "c-oop", "prerequisite_id": "c-prog-fundamentals", "relation_type": "strict", "rationale": "Object-oriented design builds directly on core procedural programming constructs." },
+    { "concept_id": "c-linear-data-structures", "prerequisite_id": "c-prog-fundamentals", "relation_type": "strict", "rationale": "Data structure implementation requires familiarity with variables, memory, and pointers/references." },
+    { "concept_id": "c-sql-basics", "prerequisite_id": "c-prog-fundamentals", "relation_type": "recommended", "rationale": "Procedural logic assists in understanding relational expressions and Boolean filtering." },
+    { "concept_id": "c-http-protocol", "prerequisite_id": "c-prog-fundamentals", "relation_type": "recommended", "rationale": "Network protocol handling relies on client-server programming basics." },
+    { "concept_id": "c-dom-js-runtime", "prerequisite_id": "c-prog-fundamentals", "relation_type": "strict", "rationale": "DOM scripting requires mastery of core language syntax and functions." },
+    { "concept_id": "c-trees-graphs", "prerequisite_id": "c-linear-data-structures", "relation_type": "strict", "rationale": "Graph and tree nodes are constructed using dynamic references or linear lists." },
+    { "concept_id": "c-algo-complexity", "prerequisite_id": "c-linear-data-structures", "relation_type": "strict", "rationale": "Complexity analysis is demonstrated through linear and non-linear memory structures." },
+    { "concept_id": "c-dynamic-programming", "prerequisite_id": "c-algo-complexity", "relation_type": "strict", "rationale": "Formulating recurrence relations requires firm grasp of recursion and asymptotic bounds." },
+    { "concept_id": "c-db-normalization", "prerequisite_id": "c-sql-basics", "relation_type": "strict", "rationale": "Effective relational schema design requires working knowledge of SQL constraints and tables." },
+    { "concept_id": "c-acid-transactions", "prerequisite_id": "c-sql-basics", "relation_type": "strict", "rationale": "Transaction boundaries are defined and tested via SQL data manipulation." },
+    { "concept_id": "c-db-indexing", "prerequisite_id": "c-db-normalization", "relation_type": "strict", "rationale": "Physical index optimization requires normalized tables and known access patterns." },
+    { "concept_id": "c-document-stores", "prerequisite_id": "c-sql-basics", "relation_type": "recommended", "rationale": "NoSQL document design contrasts with relational normalization." },
+    { "concept_id": "c-data-batch-etl", "prerequisite_id": "c-sql-basics", "relation_type": "strict", "rationale": "ETL pipelines perform transformation heavily reliant on relational join logic." },
+    { "concept_id": "c-rest-api-design", "prerequisite_id": "c-http-protocol", "relation_type": "strict", "rationale": "REST conventions directly map to HTTP methods and status semantics." },
+    { "concept_id": "c-rest-api-design", "prerequisite_id": "c-oop", "relation_type": "recommended", "rationale": "Backend service layers leverage OOP design patterns for controllers and services." },
+    { "concept_id": "c-auth-security", "prerequisite_id": "c-rest-api-design", "relation_type": "strict", "rationale": "Security mechanisms guard endpoints, sessions, and bearer tokens." },
+    { "concept_id": "c-redis-caching", "prerequisite_id": "c-rest-api-design", "relation_type": "recommended", "rationale": "Application caching sits between endpoint handlers and persistent storage." },
+    { "concept_id": "c-react-foundations", "prerequisite_id": "c-html-css-semantics", "relation_type": "strict", "rationale": "React components render semantic HTML with CSS styling." },
+    { "concept_id": "c-react-foundations", "prerequisite_id": "c-dom-js-runtime", "relation_type": "strict", "rationale": "React hooks and life cycles depend on the JavaScript runtime event loop." },
+    { "concept_id": "c-state-management", "prerequisite_id": "c-react-foundations", "relation_type": "strict", "rationale": "Complex state management extends foundational component props and state." },
+    { "concept_id": "c-docker-containers", "prerequisite_id": "c-linux-shell", "relation_type": "strict", "rationale": "Docker containers operate Linux OS namespaces and CLI configurations." },
+    { "concept_id": "c-kubernetes-orchestration", "prerequisite_id": "c-docker-containers", "relation_type": "strict", "rationale": "Kubernetes schedules and orchestrates container images built with Docker." },
+    { "concept_id": "c-cicd-pipelines", "prerequisite_id": "c-git-version-control", "relation_type": "strict", "rationale": "CI/CD triggers from Git webhook events and branch merges." },
+    { "concept_id": "c-cicd-pipelines", "prerequisite_id": "c-docker-containers", "relation_type": "recommended", "rationale": "Modern delivery pipelines package applications as container artifacts." },
+    { "concept_id": "c-stream-processing", "prerequisite_id": "c-data-batch-etl", "relation_type": "recommended", "rationale": "Streaming architecture extends batch concepts to real-time event logs." },
+    { "concept_id": "c-supervised-learning", "prerequisite_id": "c-linear-algebra-ml", "relation_type": "strict", "rationale": "Model weights and gradient descent require matrix and vector algebra." },
+    { "concept_id": "c-supervised-learning", "prerequisite_id": "c-prob-stats-ml", "relation_type": "strict", "rationale": "Loss functions and parameter likelihoods rely on probability theory." },
+    { "concept_id": "c-unsupervised-learning", "prerequisite_id": "c-linear-algebra-ml", "relation_type": "strict", "rationale": "PCA and spectral clustering depend on matrix eigenvectors and dot products." },
+    { "concept_id": "c-model-evaluation", "prerequisite_id": "c-supervised-learning", "relation_type": "strict", "rationale": "Evaluation metrics compare predictive model outputs to ground truth targets." }
+  ],
+  "skills": [
+    {
+      "id": "skill-core-programming",
+      "name": "Core Software Engineering & OOP",
+      "category": "Software Engineering",
+      "description": "Constructing maintainable software systems using OOP, concurrency, and clean patterns."
+    },
+    {
+      "id": "skill-dsa",
+      "name": "Data Structures & Algorithmic Analysis",
+      "category": "Computer Science",
+      "description": "Selecting optimal data structures and designing asymptotically efficient algorithms."
+    },
+    {
+      "id": "skill-relational-db",
+      "name": "Relational Databases & Performance",
+      "category": "Data & Storage",
+      "description": "Designing normalized relational schemas, authoring complex SQL, and tuning query execution plans."
+    },
+    {
+      "id": "skill-nosql-caching",
+      "name": "NoSQL Stores & Caching Systems",
+      "category": "Data & Storage",
+      "description": "Implementing distributed caching and non-relational document data models."
+    },
+    {
+      "id": "skill-api-architecture",
+      "name": "Web Architecture & API Security",
+      "category": "Web & Systems",
+      "description": "Designing secure, standards-compliant REST APIs and implementing robust authentication."
+    },
+    {
+      "id": "skill-frontend-ui",
+      "name": "Modern Frontend & Component Architecture",
+      "category": "Frontend Engineering",
+      "description": "Building interactive, responsive user interfaces with component frameworks and state management."
+    },
+    {
+      "id": "skill-cloud-infra",
+      "name": "Cloud Infrastructure & Containerization",
+      "category": "Cloud & DevOps",
+      "description": "Packaging applications with Docker and orchestrating services in container clusters."
+    },
+    {
+      "id": "skill-ci-cd",
+      "name": "CI/CD & DevOps Automation",
+      "category": "Cloud & DevOps",
+      "description": "Implementing automated test, build, and deployment pipelines using Git workflows."
+    },
+    {
+      "id": "skill-data-engineering",
+      "name": "Data Pipelines & Stream Processing",
+      "category": "Data Engineering",
+      "description": "Designing robust batch ETL data warehouses and real-time streaming event pipelines."
+    },
+    {
+      "id": "skill-math-for-ml",
+      "name": "Mathematical & Statistical Foundations for ML",
+      "category": "Machine Learning",
+      "description": "Applying linear algebra, multivariate calculus, and probability to algorithmic learning."
+    },
+    {
+      "id": "skill-applied-ml",
+      "name": "Applied Machine Learning & Model Evaluation",
+      "category": "Machine Learning",
+      "description": "Training, validating, calibrating, and diagnosing predictive machine learning models."
+    },
+    {
+      "id": "skill-systems-fundamentals",
+      "name": "Systems Programming & Linux Foundations",
+      "category": "Systems Engineering",
+      "description": "Managing processes, file systems, and operating system environments via the POSIX CLI."
+    }
+  ],
+  "concept_skill_mappings": [
+    { "concept_id": "c-prog-fundamentals", "skill_id": "skill-core-programming", "contribution_weight": 0.35, "rationale": "Foundational syntax and logic." },
+    { "concept_id": "c-oop", "skill_id": "skill-core-programming", "contribution_weight": 0.40, "rationale": "Object-oriented architecture patterns." },
+    { "concept_id": "c-async-concurrency", "skill_id": "skill-core-programming", "contribution_weight": 0.25, "rationale": "Concurrency and asynchronous execution." },
+
+    { "concept_id": "c-linear-data-structures", "skill_id": "skill-dsa", "contribution_weight": 0.30, "rationale": "Foundational linear collections." },
+    { "concept_id": "c-trees-graphs", "skill_id": "skill-dsa", "contribution_weight": 0.30, "rationale": "Non-linear hierarchy and graph networks." },
+    { "concept_id": "c-algo-complexity", "skill_id": "skill-dsa", "contribution_weight": 0.25, "rationale": "Big-O runtime optimization." },
+    { "concept_id": "c-dynamic-programming", "skill_id": "skill-dsa", "contribution_weight": 0.15, "rationale": "Advanced algorithmic design." },
+
+    { "concept_id": "c-sql-basics", "skill_id": "skill-relational-db", "contribution_weight": 0.30, "rationale": "Core query authoring." },
+    { "concept_id": "c-db-normalization", "skill_id": "skill-relational-db", "contribution_weight": 0.25, "rationale": "Schema design and foreign key integrity." },
+    { "concept_id": "c-db-indexing", "skill_id": "skill-relational-db", "contribution_weight": 0.25, "rationale": "Performance query optimization." },
+    { "concept_id": "c-acid-transactions", "skill_id": "skill-relational-db", "contribution_weight": 0.20, "rationale": "Data consistency guarantees." },
+
+    { "concept_id": "c-redis-caching", "skill_id": "skill-nosql-caching", "contribution_weight": 0.50, "rationale": "In-memory caching mechanisms." },
+    { "concept_id": "c-document-stores", "skill_id": "skill-nosql-caching", "contribution_weight": 0.50, "rationale": "Distributed document store design." },
+
+    { "concept_id": "c-http-protocol", "skill_id": "skill-api-architecture", "contribution_weight": 0.25, "rationale": "Web transport mechanics." },
+    { "concept_id": "c-rest-api-design", "skill_id": "skill-api-architecture", "contribution_weight": 0.40, "rationale": "REST conventions and serialization." },
+    { "concept_id": "c-auth-security", "skill_id": "skill-api-architecture", "contribution_weight": 0.35, "rationale": "Token auth and API protection." },
+
+    { "concept_id": "c-html-css-semantics", "skill_id": "skill-frontend-ui", "contribution_weight": 0.20, "rationale": "Structural layouts." },
+    { "concept_id": "c-dom-js-runtime", "skill_id": "skill-frontend-ui", "contribution_weight": 0.25, "rationale": "Browser runtime behavior." },
+    { "concept_id": "c-react-foundations", "skill_id": "skill-frontend-ui", "contribution_weight": 0.35, "rationale": "Component UI rendering." },
+    { "concept_id": "c-state-management", "skill_id": "skill-frontend-ui", "contribution_weight": 0.20, "rationale": "Complex state propagation." },
+
+    { "concept_id": "c-docker-containers", "skill_id": "skill-cloud-infra", "contribution_weight": 0.55, "rationale": "Containerized service encapsulation." },
+    { "concept_id": "c-kubernetes-orchestration", "skill_id": "skill-cloud-infra", "contribution_weight": 0.45, "rationale": "Multi-container cluster scheduling." },
+
+    { "concept_id": "c-git-version-control", "skill_id": "skill-ci-cd", "contribution_weight": 0.45, "rationale": "Branching and version release controls." },
+    { "concept_id": "c-cicd-pipelines", "skill_id": "skill-ci-cd", "contribution_weight": 0.55, "rationale": "Automated integration testing and deployment." },
+
+    { "concept_id": "c-data-batch-etl", "skill_id": "skill-data-engineering", "contribution_weight": 0.55, "rationale": "Batch transformation architecture." },
+    { "concept_id": "c-stream-processing", "skill_id": "skill-data-engineering", "contribution_weight": 0.45, "rationale": "Message queues and streaming transformations." },
+
+    { "concept_id": "c-linear-algebra-ml", "skill_id": "skill-math-for-ml", "contribution_weight": 0.50, "rationale": "Matrix algebra and vector operations." },
+    { "concept_id": "c-prob-stats-ml", "skill_id": "skill-math-for-ml", "contribution_weight": 0.50, "rationale": "Statistical modeling and distributions." },
+
+    { "concept_id": "c-supervised-learning", "skill_id": "skill-applied-ml", "contribution_weight": 0.40, "rationale": "Supervised model training." },
+    { "concept_id": "c-unsupervised-learning", "skill_id": "skill-applied-ml", "contribution_weight": 0.25, "rationale": "Clustering and dimensionality reduction." },
+    { "concept_id": "c-model-evaluation", "skill_id": "skill-applied-ml", "contribution_weight": 0.35, "rationale": "Rigorous validation and metric calibration." },
+
+    { "concept_id": "c-linux-shell", "skill_id": "skill-systems-fundamentals", "contribution_weight": 1.00, "rationale": "Core operating system CLI command operations." }
+  ],
+  "career_roles": [
+    {
+      "id": "role-backend-eng",
+      "slug": "backend-software-engineer",
+      "title": "Backend Software Engineer",
+      "description": "Architects high-performance server-side services, data storage layers, and secure RESTful APIs.",
+      "category": "Software Engineering",
+      "version": "1.0.0"
+    },
+    {
+      "id": "role-frontend-eng",
+      "slug": "frontend-software-engineer",
+      "title": "Frontend Software Engineer",
+      "description": "Engineers responsive, accessible, component-driven client applications and web user experiences.",
+      "category": "Software Engineering",
+      "version": "1.0.0"
+    },
+    {
+      "id": "role-fullstack-eng",
+      "slug": "full-stack-engineer",
+      "title": "Full-Stack Software Engineer",
+      "description": "Bridges frontend user experiences with backend API services, relational persistence, and container deployments.",
+      "category": "Software Engineering",
+      "version": "1.0.0"
+    },
+    {
+      "id": "role-data-eng",
+      "slug": "data-engineer",
+      "title": "Data Engineer",
+      "description": "Designs scalable data pipelines, analytical warehouses, stream processing queues, and storage infrastructure.",
+      "category": "Data Engineering",
+      "version": "1.0.0"
+    },
+    {
+      "id": "role-ml-eng",
+      "slug": "machine-learning-engineer",
+      "title": "Machine Learning Engineer",
+      "description": "Develops, trains, evaluates, and productionizes predictive machine learning models grounded in statistical rigor.",
+      "category": "Machine Learning",
+      "version": "1.0.0"
+    },
+    {
+      "id": "role-devops-eng",
+      "slug": "devops-platform-engineer",
+      "title": "DevOps / Cloud Platform Engineer",
+      "description": "Automates continuous integration, container orchestration, cloud deployment, and system reliability.",
+      "category": "Cloud & Infrastructure",
+      "version": "1.0.0"
+    }
+  ],
+  "role_skill_requirements": [
+    { "role_id": "role-backend-eng", "skill_id": "skill-core-programming", "importance_weight": 0.25, "target_mastery": 0.85, "rationale": "High-quality backend code requires solid OOP and concurrency." },
+    { "role_id": "role-backend-eng", "skill_id": "skill-api-architecture", "importance_weight": 0.30, "target_mastery": 0.85, "rationale": "Core responsibility is serving secure and scalable APIs." },
+    { "role_id": "role-backend-eng", "skill_id": "skill-relational-db", "importance_weight": 0.25, "target_mastery": 0.80, "rationale": "Database persistence and transaction isolation." },
+    { "role_id": "role-backend-eng", "skill_id": "skill-nosql-caching", "importance_weight": 0.10, "target_mastery": 0.75, "rationale": "High-throughput Redis caching." },
+    { "role_id": "role-backend-eng", "skill_id": "skill-dsa", "importance_weight": 0.10, "target_mastery": 0.75, "rationale": "Efficient data querying and memory structures." },
+
+    { "role_id": "role-frontend-eng", "skill_id": "skill-frontend-ui", "importance_weight": 0.45, "target_mastery": 0.85, "rationale": "Primary domain: responsive UI and state management." },
+    { "role_id": "role-frontend-eng", "skill_id": "skill-core-programming", "importance_weight": 0.20, "target_mastery": 0.75, "rationale": "Clean JavaScript and asynchronous runtime logic." },
+    { "role_id": "role-frontend-eng", "skill_id": "skill-api-architecture", "importance_weight": 0.20, "target_mastery": 0.70, "rationale": "Consuming backend APIs and handling authentication tokens." },
+    { "role_id": "role-frontend-eng", "skill_id": "skill-ci-cd", "importance_weight": 0.15, "target_mastery": 0.65, "rationale": "Frontend build tooling and continuous delivery." },
+
+    { "role_id": "role-fullstack-eng", "skill_id": "skill-frontend-ui", "importance_weight": 0.25, "target_mastery": 0.80, "rationale": "Client UI development." },
+    { "role_id": "role-fullstack-eng", "skill_id": "skill-api-architecture", "importance_weight": 0.25, "target_mastery": 0.80, "rationale": "Full API lifecycle ownership." },
+    { "role_id": "role-fullstack-eng", "skill_id": "skill-relational-db", "importance_weight": 0.20, "target_mastery": 0.75, "rationale": "Database schema and query integration." },
+    { "role_id": "role-fullstack-eng", "skill_id": "skill-core-programming", "importance_weight": 0.15, "target_mastery": 0.80, "rationale": "Clean architecture across tiers." },
+    { "role_id": "role-fullstack-eng", "skill_id": "skill-cloud-infra", "importance_weight": 0.15, "target_mastery": 0.70, "rationale": "Container packaging for full-stack deployments." },
+
+    { "role_id": "role-data-eng", "skill_id": "skill-data-engineering", "importance_weight": 0.35, "target_mastery": 0.85, "rationale": "ETL pipelines and event streams." },
+    { "role_id": "role-data-eng", "skill_id": "skill-relational-db", "importance_weight": 0.25, "target_mastery": 0.85, "rationale": "Relational warehousing and indexing." },
+    { "role_id": "role-data-eng", "skill_id": "skill-core-programming", "importance_weight": 0.15, "target_mastery": 0.75, "rationale": "Data transformation script authoring." },
+    { "role_id": "role-data-eng", "skill_id": "skill-systems-fundamentals", "importance_weight": 0.15, "target_mastery": 0.75, "rationale": "Linux infrastructure and file ingestion." },
+    { "role_id": "role-data-eng", "skill_id": "skill-cloud-infra", "importance_weight": 0.10, "target_mastery": 0.70, "rationale": "Containerized processing clusters." },
+
+    { "role_id": "role-ml-eng", "skill_id": "skill-applied-ml", "importance_weight": 0.35, "target_mastery": 0.85, "rationale": "Training and evaluating ML models." },
+    { "role_id": "role-ml-eng", "skill_id": "skill-math-for-ml", "importance_weight": 0.25, "target_mastery": 0.80, "rationale": "Linear algebra and probability mechanics." },
+    { "role_id": "role-ml-eng", "skill_id": "skill-core-programming", "importance_weight": 0.15, "target_mastery": 0.80, "rationale": "Production-grade ML codebases." },
+    { "role_id": "role-ml-eng", "skill_id": "skill-dsa", "importance_weight": 0.15, "target_mastery": 0.75, "rationale": "Computational performance on large datasets." },
+    { "role_id": "role-ml-eng", "skill_id": "skill-cloud-infra", "importance_weight": 0.10, "target_mastery": 0.70, "rationale": "Model deployment containers." },
+
+    { "role_id": "role-devops-eng", "skill_id": "skill-cloud-infra", "importance_weight": 0.35, "target_mastery": 0.85, "rationale": "Kubernetes orchestration and Docker containers." },
+    { "role_id": "role-devops-eng", "skill_id": "skill-ci-cd", "importance_weight": 0.30, "target_mastery": 0.85, "rationale": "Automated deployment pipelines." },
+    { "role_id": "role-devops-eng", "skill_id": "skill-systems-fundamentals", "importance_weight": 0.20, "target_mastery": 0.85, "rationale": "Linux administration and scripting." },
+    { "role_id": "role-devops-eng", "skill_id": "skill-api-architecture", "importance_weight": 0.15, "target_mastery": 0.70, "rationale": "Networking, TLS, and ingress configuration." }
+  ]
+}

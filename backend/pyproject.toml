@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adaptive-career-pathway"
+version = "0.1.0"
+description = "Adaptive Career-Pathway Recommendation via Concept-Centric Long-Term Learner Modeling"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "pydantic>=2.8.0",
+    "networkx>=3.3",
+    "numpy>=2.0.0",
+    "pandas>=2.2.0",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q --import-mode=importlib"
+testpaths = ["tests", "ml/bkt/tests"]
+pythonpath = ["."]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+filterwarnings = [
+    "ignore::DeprecationWarning:pyBKT.*",
+    "ignore::DeprecationWarning:dateutil.*",
+]

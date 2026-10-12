@@ -1,0 +1,302 @@
+[
+  {
+    "id": "q-prog-001",
+    "concept_id": "c-prog-fundamentals",
+    "prompt": "What is the primary difference between a parameter and an argument in function execution?",
+    "options": [
+      "A parameter is the variable declared in the function definition, while an argument is the actual value passed during invocation.",
+      "A parameter is evaluated at runtime, while an argument is evaluated at compile time.",
+      "Parameters are only used in object-oriented programming, whereas arguments are used in functional programming.",
+      "There is no difference; they are exact technical synonyms in all languages."
+    ],
+    "correct_option_index": 0,
+    "difficulty": 0.35,
+    "explanation": "Parameters are defined in the function signature as placeholders, while arguments are concrete values supplied when calling the function.",
+    "tags": ["functions", "basics"]
+  },
+  {
+    "id": "q-oop-001",
+    "concept_id": "c-oop",
+    "prompt": "Which SOLID principle asserts that software entities should be open for extension, but closed for modification?",
+    "options": [
+      "Single Responsibility Principle",
+      "Open/Closed Principle",
+      "Liskov Substitution Principle",
+      "Dependency Inversion Principle"
+    ],
+    "correct_option_index": 1,
+    "difficulty": 0.45,
+    "explanation": "The Open/Closed Principle (OCP) states that classes or modules should allow behavior to be extended via inheritance or composition without altering existing source code.",
+    "tags": ["solid", "architecture"]
+  },
+  {
+    "id": "q-dsa-001",
+    "concept_id": "c-linear-data-structures",
+    "prompt": "What is the worst-case time complexity of accessing an arbitrary element by index in a singly linked list compared to a contiguous dynamic array?",
+    "options": [
+      "O(1) for linked list, O(1) for array",
+      "O(N) for linked list, O(1) for array",
+      "O(1) for linked list, O(N) for array",
+      "O(log N) for linked list, O(1) for array"
+    ],
+    "correct_option_index": 1,
+    "difficulty": 0.40,
+    "explanation": "Arrays provide O(1) random access via memory address arithmetic (base + index * size), whereas linked lists must traverse sequentially from the head node, taking O(N).",
+    "tags": ["arrays", "linked-lists", "complexity"]
+  },
+  {
+    "id": "q-trees-001",
+    "concept_id": "c-trees-graphs",
+    "prompt": "Which tree traversal algorithm on a Binary Search Tree (BST) visits nodes in strictly ascending sorted order?",
+    "options": [
+      "Pre-order traversal (Root, Left, Right)",
+      "In-order traversal (Left, Root, Right)",
+      "Post-order traversal (Left, Right, Root)",
+      "Level-order traversal (Breadth-First)"
+    ],
+    "correct_option_index": 1,
+    "difficulty": 0.40,
+    "explanation": "In-order traversal visits all nodes in the left subtree (smaller), then the current node, then the right subtree (larger), producing ascending sorted order.",
+    "tags": ["bst", "traversal"]
+  },
+  {
+    "id": "q-algo-001",
+    "concept_id": "c-algo-complexity",
+    "prompt": "What is the tight asymptotic upper bound (Big-O) of Merge Sort in the worst-case scenario on an array of length N?",
+    "options": [
+      "O(N)",
+      "O(N log N)",
+      "O(N^2)",
+      "O(log N)"
+    ],
+    "correct_option_index": 1,
+    "difficulty": 0.40,
+    "explanation": "Merge sort divides the array in half at log N levels and performs O(N) merge work at each level, guaranteeing O(N log N) time in best, average, and worst cases.",
+    "tags": ["sorting", "big-o"]
+  },
+  {
+    "id": "q-sql-001",
+    "concept_id": "c-sql-basics",
+    "prompt": "Which SQL clause is used to filter aggregated group records produced by a GROUP BY statement?",
+    "options": [
+      "WHERE",
+      "HAVING",
+      "FILTER BY",
+      "LIMIT"
+    ],
+    "correct_option_index": 1,
+    "difficulty": 0.35,
+    "explanation": "WHERE filters individual table rows prior to aggregation, while HAVING filters aggregated group metrics (e.g., HAVING COUNT(*) > 5) after grouping.",
+    "tags": ["sql", "aggregation"]
+  },
+  {
+    "id": "q-norm-001",
+    "concept_id": "c-db-normalization",
+    "prompt": "A relational table is in Third Normal Form (3NF) if it is already in 2NF and contains no:",
+    "options": [
+      "Repeating groups",
+      "Partial functional dependencies on a composite primary key",
+      "Transitive functional dependencies between non-key attributes",
+      "Foreign keys"
+    ],
+    "correct_option_index": 2,
+    "difficulty": 0.50,
+    "explanation": "3NF requires that all non-key attributes are directly dependent on the primary key, eliminating transitive dependencies where X -> Y and Y -> Z.",
+    "tags": ["normalization", "database-design"]
+  },
+  {
+    "id": "q-idx-001",
+    "concept_id": "c-db-indexing",
+    "prompt": "Why can adding a B-tree index to a column degrade database write performance (INSERT/UPDATE)?",
+    "options": [
+      "It locks the entire database server on every insert.",
+      "The database must rebalance and update the B-tree index structures in addition to writing the row data.",
+      "B-trees convert all relational tables into read-only files.",
+      "It disables query caching for that table."
+    ],
+    "correct_option_index": 1,
+    "difficulty": 0.55,
+    "explanation": "Every insert, delete, or update affecting indexed columns requires the database engine to traverse, split, and persist modifications to the corresponding B-tree nodes.",
+    "tags": ["indexing", "performance"]
+  },
+  {
+    "id": "q-acid-001",
+    "concept_id": "c-acid-transactions",
+    "prompt": "Which ACID property guarantees that once a database transaction commits, its state modifications will survive system crashes and power failures?",
+    "options": [
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Durability"
+    ],
+    "correct_option_index": 3,
+    "difficulty": 0.40,
+    "explanation": "Durability ensures committed transaction changes are written to non-volatile storage (such as a Write-Ahead Log) and are never lost on crash recovery.",
+    "tags": ["acid", "transactions"]
+  },
+  {
+    "id": "q-redis-001",
+    "concept_id": "c-redis-caching",
+    "prompt": "In a cache-aside (lazy loading) pattern, what action does the application take on a cache miss?",
+    "options": [
+      "Returns an immediate HTTP 404 error to the client.",
+      "Queries the database for data, writes the result to the cache, and returns it to the client.",
+      "Deletes the cache key permanently.",
+      "Blocks until the database background worker updates the cache."
+    ],
+    "correct_option_index": 1,
+    "difficulty": 0.45,
+    "explanation": "Cache-aside queries cache first; on a miss, the application loads from the primary database, populates the cache for subsequent requests, and returns data.",
+    "tags": ["caching", "redis"]
+  },
+  {
+    "id": "q-http-001",
+    "concept_id": "c-http-protocol",
+    "prompt": "According to the HTTP/1.1 specification, which HTTP method is defined as idempotent and safe?",
+    "options": [
+      "POST",
+      "DELETE",
+      "GET",
+      "PATCH"
+    ],
+    "correct_option_index": 2,
+    "difficulty": 0.40,
+    "explanation": "GET is safe (read-only, does not modify resource state on the server) and idempotent (multiple identical calls produce the same state).",
+    "tags": ["http", "web"]
+  },
+  {
+    "id": "q-rest-001",
+    "concept_id": "c-rest-api-design",
+    "prompt": "Which HTTP status code should be returned after successfully creating a new resource via a POST request?",
+    "options": [
+      "200 OK",
+      "201 Created",
+      "204 No Content",
+      "301 Moved Permanently"
+    ],
+    "correct_option_index": 1,
+    "difficulty": 0.35,
+    "explanation": "HTTP 201 Created signals that the request succeeded and resulted in the creation of one or more new resources, typically accompanied by a Location header.",
+    "tags": ["rest", "api"]
+  },
+  {
+    "id": "q-sec-001",
+    "concept_id": "c-auth-security",
+    "prompt": "Why should passwords never be stored using simple fast hashing algorithms like MD5 or SHA-256?",
+    "options": [
+      "Because MD5 and SHA-256 cannot hash strings longer than 16 characters.",
+      "Because modern GPUs can compute billions of SHA-256 hashes per second, making brute-force and rainbow table attacks trivial without a slow, salted work factor (e.g. Argon2, bcrypt).",
+      "Because SHA-256 is an asymmetric encryption cipher requiring private keys.",
+      "Because MD5 outputs plain text when decrypted."
+    ],
+    "correct_option_index": 1,
+    "difficulty": 0.50,
+    "explanation": "Password storage requires adaptive, computationally slow, memory-hard hashing algorithms (like Argon2id or bcrypt) with random salts to defeat hardware acceleration.",
+    "tags": ["security", "passwords", "hashing"]
+  },
+  {
+    "id": "q-react-001",
+    "concept_id": "c-react-foundations",
+    "prompt": "What is the primary benefit of the Virtual DOM reconciliation process in React?",
+    "options": [
+      "It completely bypasses the browser's JavaScript engine.",
+      "It computes minimal DOM diffs in memory and batches updates to minimize expensive real DOM mutations.",
+      "It automatically converts CSS styles into binary machine code.",
+      "It replaces the need for server-side APIs."
+    ],
+    "correct_option_index": 1,
+    "difficulty": 0.45,
+    "explanation": "Real DOM updates are expensive layout and repaint operations; React diffs the Virtual DOM tree in memory and applies only the delta to the live browser DOM.",
+    "tags": ["react", "virtual-dom"]
+  },
+  {
+    "id": "q-docker-001",
+    "concept_id": "c-docker-containers",
+    "prompt": "What is the primary architectural mechanism Docker uses to isolate processes on a Linux host without virtualizing an entire hardware machine?",
+    "options": [
+      "Hypervisor Type 1 hardware emulation",
+      "Linux Kernel Namespaces and Control Groups (cgroups)",
+      "BIOS boot sequence redirection",
+      "Java Virtual Machine byte-code sandboxing"
+    ],
+    "correct_option_index": 1,
+    "difficulty": 0.50,
+    "explanation": "Docker leverages Linux namespaces for isolation (PID, network, mount) and cgroups for resource metering/limits (CPU, memory), sharing the underlying host kernel.",
+    "tags": ["docker", "containers", "linux"]
+  },
+  {
+    "id": "q-cicd-001",
+    "concept_id": "c-cicd-pipelines",
+    "prompt": "In continuous integration workflows, what is the core purpose of a merge/pull-request validation pipeline?",
+    "options": [
+      "To deploy untested code directly to production customers instantly.",
+      "To automatically run linters, security scans, and unit/integration tests before code is merged into the main branch.",
+      "To eliminate the need for source control branching.",
+      "To convert code into a closed-source binary executable."
+    ],
+    "correct_option_index": 1,
+    "difficulty": 0.35,
+    "explanation": "CI gates PRs by executing automated test suites and linters, verifying that new contributions do not break master branch stability.",
+    "tags": ["cicd", "testing"]
+  },
+  {
+    "id": "q-etl-001",
+    "concept_id": "c-data-batch-etl",
+    "prompt": "What distinguishes columnar storage file formats (such as Apache Parquet) from row-oriented formats (such as CSV or JSON) for analytical OLAP workloads?",
+    "options": [
+      "Parquet can only store unstructured textual paragraphs.",
+      "Parquet stores data values grouped by column, allowing analytical aggregations to scan only requested columns with high compression ratios.",
+      "Parquet requires an active MySQL server to be decoded.",
+      "Row-oriented formats are faster for massive multi-million row SUM/AVG queries."
+    ],
+    "correct_option_index": 1,
+    "difficulty": 0.55,
+    "explanation": "Columnar storage enables column-pruning (reading only queried columns from disk) and vectorization with efficient run-length or dictionary encoding.",
+    "tags": ["etl", "data-warehousing", "parquet"]
+  },
+  {
+    "id": "q-stream-001",
+    "concept_id": "c-stream-processing",
+    "prompt": "In Apache Kafka, what enables horizontal scaling of message consumption across multiple consumers in a single consumer group?",
+    "options": [
+      "Partitioning of topics across broker nodes",
+      "Compressing all messages into a single ZIP file",
+      "Converting Kafka topics into relational database tables",
+      "Enforcing single-threaded execution"
+    ],
+    "correct_option_index": 0,
+    "difficulty": 0.55,
+    "explanation": "Kafka topics are divided into partitions; each partition within a topic is assigned to exactly one consumer instance in a consumer group, enabling parallel processing.",
+    "tags": ["kafka", "streaming"]
+  },
+  {
+    "id": "q-math-001",
+    "concept_id": "c-linear-algebra-ml",
+    "prompt": "If vector u = [2, 3] and vector v = [4, -1], what is their dot product (u · v)?",
+    "options": [
+      "5",
+      "8",
+      "11",
+      "-5"
+    ],
+    "correct_option_index": 0,
+    "difficulty": 0.35,
+    "explanation": "The dot product is computed as (2 * 4) + (3 * -1) = 8 - 3 = 5.",
+    "tags": ["linear-algebra", "math"]
+  },
+  {
+    "id": "q-ml-001",
+    "concept_id": "c-model-evaluation",
+    "prompt": "Why is Area Under the ROC Curve (ROC-AUC) often preferred over classification accuracy when evaluating binary classifiers on imbalanced datasets?",
+    "options": [
+      "Because ROC-AUC is always equal to 1.0 on skewed data.",
+      "Because accuracy can be deceptively high by trivially predicting the majority class, while ROC-AUC evaluates discrimination threshold-independently across all trade-offs.",
+      "Because ROC-AUC does not require probability predictions.",
+      "Because accuracy is only defined for multi-class regression models."
+    ],
+    "correct_option_index": 1,
+    "difficulty": 0.45,
+    "explanation": "On a 99:1 imbalanced dataset, a dummy classifier predicting 0 achieves 99% accuracy but has ROC-AUC 0.50 (random guessing), exposing the model's true lack of discrimination.",
+    "tags": ["evaluation", "metrics", "roc-auc"]
+  }
+]
