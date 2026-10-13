@@ -19,6 +19,7 @@ class AppSettings(BaseModel):
             "DATABASE_URL", f"sqlite:///{BASE_DIR / 'career_pathway.db'}"
         )
     )
+    database_path: Path = DATA_DIR / "learner_store.db"
     competency_data_path: Path = DATA_DIR / "competency_v1.json"
     questions_data_path: Path = DATA_DIR / "questions_v1.json"
 

@@ -63,6 +63,10 @@ class TestRealCompetencyDataset:
         assert ancestors.index("c-prog-fundamentals") < ancestors.index("c-linear-data-structures")
         assert ancestors.index("c-linear-data-structures") < ancestors.index("c-algo-complexity")
 
+        # Concurrency must require programming foundations
+        async_ancestors = real_repository.get_all_ancestor_prerequisites("c-async-concurrency")
+        assert "c-prog-fundamentals" in async_ancestors
+
     def test_root_concepts_have_no_prerequisites(self, real_repository: CompetencyRepository):
         # Programming foundations, Linux shell, Git, and HTML should be root nodes
         roots = [n for n, deg in real_repository.prerequisite_dag.in_degree() if deg == 0]

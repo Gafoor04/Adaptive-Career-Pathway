@@ -8,6 +8,8 @@ import math
 import numpy as np
 import pandas as pd
 import pytest
+
+pyBKT = pytest.importorskip("pyBKT")
 from pyBKT.models import Model
 
 from ml.bkt.parameters import BKTParameters

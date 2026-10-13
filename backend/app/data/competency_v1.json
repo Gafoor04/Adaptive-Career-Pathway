@@ -298,6 +298,7 @@
     { "concept_id": "c-sql-basics", "prerequisite_id": "c-prog-fundamentals", "relation_type": "recommended", "rationale": "Procedural logic assists in understanding relational expressions and Boolean filtering." },
     { "concept_id": "c-http-protocol", "prerequisite_id": "c-prog-fundamentals", "relation_type": "recommended", "rationale": "Network protocol handling relies on client-server programming basics." },
     { "concept_id": "c-dom-js-runtime", "prerequisite_id": "c-prog-fundamentals", "relation_type": "strict", "rationale": "DOM scripting requires mastery of core language syntax and functions." },
+    { "concept_id": "c-async-concurrency", "prerequisite_id": "c-prog-fundamentals", "relation_type": "strict", "rationale": "Understanding procedural control flow, functions, and state execution is required before multithreading, concurrency, and asynchronous event loops." },
     { "concept_id": "c-trees-graphs", "prerequisite_id": "c-linear-data-structures", "relation_type": "strict", "rationale": "Graph and tree nodes are constructed using dynamic references or linear lists." },
     { "concept_id": "c-algo-complexity", "prerequisite_id": "c-linear-data-structures", "relation_type": "strict", "rationale": "Complexity analysis is demonstrated through linear and non-linear memory structures." },
     { "concept_id": "c-dynamic-programming", "prerequisite_id": "c-algo-complexity", "relation_type": "strict", "rationale": "Formulating recurrence relations requires firm grasp of recursion and asymptotic bounds." },
